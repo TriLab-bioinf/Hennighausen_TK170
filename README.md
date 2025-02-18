@@ -12,7 +12,7 @@ awk '{print $1"\t"$1"\t""gene"}' DE_level1.transmembrane.network.txt |sed 1d> DE
 cat DE_level1.transmembrane.network.anno1 DE_level1.transmembrane.network.anno2 |sed '1i source\tanno\ttype'>DE_level1.transmembrane.network.anno.txt
 ```
 
-## for all Level 1 id
+## for all Level 1 genes
 ### retrieve all related GO terms for DE_level1 genes
 ```
 sort -k1,1 DE_level1.id| join -t$'\t' -1 1 - -2 2 <(sort -k2,2 Wikim_166.GO.formatted2.txt) |sed '1i gene\tGO\tOntology' >DE_level1.network.txt

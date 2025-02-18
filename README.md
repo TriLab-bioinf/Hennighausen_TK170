@@ -1,5 +1,5 @@
 # Hennighausen_TK170
-## for transmembrane
+## for transmembrane related genes in DE level1 lists
 ### retrieve all transmembrane related genes in DE_level1 lists and get the related GO terms for these genes
 ```
 grep "transmembrane" go_basic_3_columns.txt|sort -k1,1|join -t$'\t' -1 1 - -2 1 <(sort -k1,1 Wikim_166.GO.formatted2.txt)|sort -t$'\t' -k4,4 |join -t$'\t' -1 4 - -2 1 <(sort -k1,1 DE_level1.id)|cut -f1|sort -u|join -t$'\t' -1 1 - -2 2 <(sort -k2,2 Wikim_166.GO.formatted2.txt) |sed '1i gene\tGO\tOntology' >DE_level1.transmembrane.network.txt

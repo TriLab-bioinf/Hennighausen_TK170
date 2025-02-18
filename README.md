@@ -1,4 +1,19 @@
 # Hennighausen_TK170
+## convert go-basic.obo to 3 columns format
+```
+python convert_obo_to_columns.py
+```
+
+## retrieve GO terms for each gene
+```
+## retrieve GO information from gff file
+cat Wikim_166_afdsc_consensus.pgap.gff |awk 'BEGIN{FS="\t"}{if($3=="CDS")print $9}'|sed 's/^.*locus_tag=//g'|sed 's/;product=.*$//g'|sed 's/;note=.*\./\t/g'|sed 's/GO_[a-z]*: //g'|sed 's/  /\t/g'|sed 's/\t /\t/g' >Wikim_166_afdsc.GO.txt
+## extract the necessary information
+python Wikim_166_afdsc.py
+## reformat
+awk '{n=split($2,a,","); for (i=1; i<=n; i++) print $1"\t"a[i]}' Wikim_166_afdsc.GO.formatted.txt|sort -k2,2|join -t$'\t' -1 2 - -2 1 <(sort -k1,1 database/go_basic_3_columns.txt)|cut -f1,2,4 >Wikim_166_afdsc.GO.formatted2.txt
+```
+
 ## for transmembrane related genes in DE level1 lists
 ### retrieve all transmembrane related genes in DE_level1 lists and get the related GO terms for these genes
 ```

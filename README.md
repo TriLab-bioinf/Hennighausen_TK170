@@ -27,12 +27,17 @@ cat DE_level1.network.anno1 DE_level1.network.anno2 |sort -u|sed '1i source\tann
 
 ## cytoscape
 File -> Import -> Network from File (choose DE_level1.network.txt, gene as source, GO as target)
+
 File -> Import -> Table from File (choose DE_level1.network.anno.txt)
+
 style: 
+
 Fill Color: 
+
 ![image](https://github.com/user-attachments/assets/bbd42a6b-ac44-4eba-914f-625ad3a37b34)
 
 Shape:
+
 ![image](https://github.com/user-attachments/assets/fb356a1b-6b10-4b72-8910-fa60502b2cbc)
 
 Layout: yFiles Organic Layout

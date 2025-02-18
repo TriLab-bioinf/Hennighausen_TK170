@@ -32,12 +32,12 @@ File -> Import -> Table from File (choose DE_level1.network.anno.txt)
 
 style: 
 
-Fill Color: 
+**Fill Color**: 
 
 ![image](https://github.com/user-attachments/assets/bbd42a6b-ac44-4eba-914f-625ad3a37b34)
 
-Shape:
+**Shape**:
 
 ![image](https://github.com/user-attachments/assets/fb356a1b-6b10-4b72-8910-fa60502b2cbc)
 
-Layout: yFiles Organic Layout
+**Layout**: yFiles Organic Layout
